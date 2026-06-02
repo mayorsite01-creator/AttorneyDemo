@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>James R. Calloway | Atlanta Personal Injury Attorney</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<style>
+  :root {
+    --navy:      #0A1628;
+    --navy-2:    #112040;
+    --navy-3:    #1A3260;
+    --gold:      #C9A84C;
+    --gold-l:    #E8C97A;
+    --gold-d:    #A07830;
+    --white:     #FFFFFF;
+    --off-white: #F8F7F4;
+    --cream:     #F2EFE8;
+    --slate:     #64748B;
+    --light:     #E8ECF2;
+    --border:    #DDE2EC;
+    --serif:     'Playfair Display', Georgia, serif;
+    --sans:      'Mulish', sans-serif;
+    --nav-h:     76px;
+    --ease:      cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--navy);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: var(--nav-h);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 60px;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+  }
+  nav.scrolled { border-color: var(--border); }
+
+  .nav-logo { display: flex; flex-direction: column; text-decoration: none; }
+  .nav-logo-name {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+  }
+  .nav-logo-title {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-d);
+    margin-top: 2px;
+  }
+
+  .nav-links { display: flex; align-items: center; gap: 32px; }
+  .nav-links a {
+    font-size: 13px; font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--slate);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--navy); }
+
+  .nav-cta {
+    background: var(--navy) !important;
+    color: var(--white) !important;
+    padding: 11px 24px;
+    font-size: 12px !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase;
+    border: none; cursor: pointer;
+    transition: background 0.2s !important;
+    font-family: var(--sans);
+    font-weight: 600 !important;
+  }
+  .nav-cta:hover { background: var(--gold-d) !important; }
+
+  .nav-phone {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 14px; font-weight: 600;
+    color: var(--navy) !important;
+    text-decoration: none;
+  }
+  .nav-phone i { color: var(--gold); }
+
+  .nav-mobile-btn { display: none; background: none; border: none; cursor: pointer; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    padding-top: var(--nav-h);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--off-white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 50%; height: 100%;
+    background: var(--navy);
+    z-index: 0;
+  }
+
+  .hero-left {
+    position: relative; z-index: 1;
+    padding: 80px 60px 80px 80px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+
+  .hero-eyebrow {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold-d);
+    margin-bottom: 28px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block; width: 32px; height: 1px;
+    background: var(--gold-d);
+  }
+
+  .hero-headline {
+    font-family: var(--serif);
+    font-size: clamp(42px, 4.5vw, 64px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--navy);
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+  }
+  .hero-headline em { font-style: italic; color: var(--gold-d); }
+
+  .hero-body {
+    font-size: 16px; font-weight: 300; line-height: 1.75;
+    color: var(--slate);
+    max-width: 440px;
+    margin-bottom: 40px;
+  }
+
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; margin-bottom: 48px; }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--navy); color: var(--white);
+    font-family: var(--sans); font-size: 13px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;
+    padding: 16px 32px; border: none; cursor: pointer;
+    transition: background 0.2s, transform 0.2s var(--ease);
+  }
+  .btn-primary:hover { background: var(--gold-d); transform: translateY(-1px); }
+
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent; color: var(--navy);
+    font-family: var(--sans); font-size: 13px; font-weight: 600;
+    letter-spacing: 0.06em; text-decoration: none;
+    padding: 16px 0; border: none; cursor: pointer;
+    border-bottom: 1.5px solid var(--navy);
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .btn-outline:hover { color: var(--gold-d); border-color: var(--gold-d); }
+
+  .hero-trust {
+    display: flex; gap: 32px; flex-wrap: wrap;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+  }
+  .hero-trust-item { }
+  .hero-trust-num {
+    font-family: var(--serif); font-size: 28px; font-weight: 700;
+    color: var(--navy); line-height: 1;
+  }
+  .hero-trust-label { font-size: 12px; color: var(--slate); margin-top: 3px; font-weight: 500; letter-spacing: 0.04em; }
+
+  .hero-right {
+    position: relative; z-index: 1;
+    display: flex; flex-direction: column;
+    justify-content: flex-end;
+    padding: 60px 60px 0 60px;
+  }
+
+  .hero-img {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    aspect-ratio: 3/4;
+    background: linear-gradient(170deg, #1A3260 0%, #0A1628 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 12px; color: rgba(255,255,255,0.3);
+    position: relative; overflow: hidden;
+  }
+  .hero-img::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(201,168,76,0.06) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(201,168,76,0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .hero-img-label { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; position: relative; z-index: 1; }
+
+  .hero-award {
+    position: absolute;
+    top: 40px; left: -20px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 32px rgba(10,22,40,0.12);
+    padding: 16px 20px;
+    display: flex; align-items: center; gap: 12px;
+    min-width: 220px;
+  }
+  .hero-award-icon {
+    width: 40px; height: 40px;
+    background: var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: var(--white);
+  }
+  .hero-award-text { font-size: 12px; font-weight: 600; color: var(--navy); line-height: 1.4; }
+  .hero-award-sub { font-size: 11px; color: var(--slate); font-weight: 400; margin-top: 2px; }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    background: var(--navy);
+    padding: 20px 80px;
+    display: flex; align-items: center; justify-content: center;
+    gap: 48px; flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 12px; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+  }
+  .trust-item i { color: var(--gold); }
+
+  /* ── SECTION COMMONS ── */
+  section { padding: 100px 80px; }
+
+  .section-label {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold-d);
+    margin-bottom: 14px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold-d); }
+
+  .section-heading {
+    font-family: var(--serif);
+    font-size: clamp(32px, 3.5vw, 48px);
+    font-weight: 700; line-height: 1.1;
+    color: var(--navy); margin-bottom: 18px;
+  }
+  .section-heading em { font-style: italic; color: var(--gold-d); }
+
+  .section-sub {
+    font-size: 16px; font-weight: 300; line-height: 1.75;
+    color: var(--slate); max-width: 520px;
+  }
+
+  /* ── PRACTICE AREAS ── */
+  .practice { background: var(--white); }
+
+  .practice-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 56px; gap: 32px; flex-wrap: wrap; }
+
+  .practice-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2px; background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .practice-card {
+    background: var(--white);
+    padding: 40px 32px;
+    position: relative; overflow: hidden;
+    transition: background 0.3s;
+    cursor: pointer;
+  }
+  .practice-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 3px;
+    background: var(--gold);
+    transition: width 0.4s var(--ease);
+  }
+  .practice-card:hover { background: var(--off-white); }
+  .practice-card:hover::after { width: 100%; }
+
+  .practice-icon {
+    width: 48px; height: 48px;
+    background: var(--light);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+    color: var(--navy-3);
+  }
+  .practice-title {
+    font-family: var(--serif); font-size: 20px; font-weight: 700;
+    color: var(--navy); margin-bottom: 10px; line-height: 1.2;
+  }
+  .practice-desc {
+    font-size: 14px; font-weight: 300; line-height: 1.7;
+    color: var(--slate); margin-bottom: 20px;
+  }
+  .practice-link {
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--gold-d); text-decoration: none;
+    display: flex; align-items: center; gap: 6px;
+    transition: gap 0.2s;
+  }
+  .practice-card:hover .practice-link { gap: 10px; }
+
+  /* ── WHY CALLOWAY ── */
+  .why {
+    background: var(--navy);
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
+    padding: 100px 80px;
+  }
+
+  .why .section-label { color: var(--gold-l); }
+  .why .section-label::before { background: var(--gold-l); }
+  .why .section-heading { color: var(--white); }
+  .why .section-sub { color: rgba(255,255,255,0.55); max-width: 100%; }
+
+  .why-points { display: flex; flex-direction: column; gap: 0; margin-top: 36px; }
+  .why-point {
+    display: flex; gap: 20px; padding: 24px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .why-point:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
+  .why-point-num {
+    font-family: var(--serif); font-size: 32px; font-weight: 700;
+    color: rgba(201,168,76,0.3); line-height: 1; flex-shrink: 0; width: 36px;
+  }
+  .why-point-title { font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+  .why-point-desc { font-size: 14px; font-weight: 300; line-height: 1.65; color: rgba(255,255,255,0.5); }
+
+  .why-right { display: flex; flex-direction: column; gap: 20px; }
+
+  .why-stat-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 28px 32px;
+  }
+  .why-stat-num {
+    font-family: var(--serif); font-size: 48px; font-weight: 700;
+    color: var(--gold); line-height: 1; margin-bottom: 6px;
+  }
+  .why-stat-label { font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.5); letter-spacing: 0.04em; }
+
+  .why-stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  /* ── ABOUT ── */
+  .about {
+    background: var(--cream);
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
+    padding: 100px 80px;
+  }
+
+  .about-img {
+    aspect-ratio: 4/5;
+    background: linear-gradient(160deg, #1A3260 0%, #0A1628 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 12px; color: rgba(255,255,255,0.3);
+    position: relative; overflow: hidden;
+  }
+  .about-img::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(201,168,76,0.06) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(201,168,76,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .about-img-label { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; position: relative; z-index: 1; }
+  .about-gold-corner {
+    position: absolute; bottom: 0; right: 0;
+    width: 80px; height: 80px;
+    background: var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--white);
+  }
+
+  .about-credentials {
+    display: flex; flex-direction: column; gap: 12px;
+    margin-top: 32px;
+  }
+  .credential {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 14px; font-weight: 500; color: var(--navy);
+  }
+  .credential::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials { background: var(--white); }
+
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 24px; margin-top: 56px;
+  }
+
+  .testimonial-card {
+    padding: 36px 32px;
+    border: 1px solid var(--border);
+    position: relative;
+  }
+  .testimonial-card::before {
+    content: '"';
+    font-family: var(--serif); font-size: 80px; font-weight: 700;
+    color: var(--gold); line-height: 1;
+    position: absolute; top: 16px; right: 24px;
+    opacity: 0.3;
+  }
+
+  .testimonial-stars { color: var(--gold); font-size: 14px; letter-spacing: 3px; margin-bottom: 16px; }
+  .testimonial-quote {
+    font-family: var(--serif); font-size: 17px; font-style: italic;
+    font-weight: 400; line-height: 1.65; color: var(--navy);
+    margin-bottom: 24px;
+  }
+  .testimonial-author { display: flex; align-items: center; gap: 12px; }
+  .author-avatar {
+    width: 40px; height: 40px;
+    background: var(--light);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-size: 16px; font-weight: 700;
+    color: var(--navy-3);
+  }
+  .author-name { font-size: 14px; font-weight: 600; color: var(--navy); }
+  .author-case { font-size: 12px; color: var(--slate); margin-top: 2px; font-weight: 400; }
+
+  /* ── RESULTS ── */
+  .results {
+    background: var(--off-white);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 80px;
+  }
+
+  .results-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 2px; background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .result-item {
+    background: var(--white);
+    padding: 36px 28px;
+    text-align: center;
+  }
+  .result-amount {
+    font-family: var(--serif); font-size: 36px; font-weight: 700;
+    color: var(--navy); line-height: 1; margin-bottom: 6px;
+  }
+  .result-case { font-size: 13px; color: var(--slate); font-weight: 400; margin-bottom: 4px; }
+  .result-type {
+    display: inline-block;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gold-d);
+    background: var(--cream);
+    padding: 3px 8px;
+    margin-top: 8px;
+  }
+
+  /* ── CONTACT ── */
+  .contact {
+    background: var(--navy);
+    padding: 100px 80px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: start;
+  }
+
+  .contact .section-label { color: var(--gold-l); }
+  .contact .section-label::before { background: var(--gold-l); }
+  .contact .section-heading { color: var(--white); }
+  .contact .section-sub { color: rgba(255,255,255,0.5); margin-bottom: 36px; }
+
+  .contact-detail {
+    display: flex; align-items: center; gap: 14px;
+    font-size: 15px; font-weight: 400;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none; margin-bottom: 18px;
+    transition: color 0.2s;
+  }
+  .contact-detail:hover { color: var(--white); }
+  .contact-detail i { color: var(--gold); flex-shrink: 0; }
+
+  .contact-form { display: flex; flex-direction: column; gap: 14px; }
+  .cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .cf-group { display: flex; flex-direction: column; gap: 7px; }
+  .cf-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+  .cf-input, .cf-select, .cf-textarea {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--white); font-family: var(--sans); font-size: 14px; font-weight: 300;
+    padding: 13px 16px; outline: none; width: 100%;
+    transition: border-color 0.2s; -webkit-appearance: none;
+  }
+  .cf-input:focus, .cf-select:focus, .cf-textarea:focus { border-color: var(--gold); }
+  .cf-input::placeholder, .cf-textarea::placeholder { color: rgba(255,255,255,0.2); }
+  .cf-select option { background: var(--navy-2); }
+  .cf-textarea { resize: vertical; min-height: 90px; }
+  .cf-disclaimer { font-size: 11px; color: rgba(255,255,255,0.3); line-height: 1.6; margin-top: 4px; }
+  .cf-submit {
+    background: var(--gold); color: var(--navy);
+    font-family: var(--sans); font-size: 13px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 18px 32px; border: none; cursor: pointer;
+    transition: background 0.2s, transform 0.2s var(--ease);
+    align-self: flex-start;
+  }
+  .cf-submit:hover { background: var(--gold-l); transform: translateY(-1px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #060E1A;
+    padding: 32px 80px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 12px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-left { font-size: 13px; color: rgba(255,255,255,0.3); }
+  .footer-left a { color: rgba(255,255,255,0.4); text-decoration: none; }
+  .footer-disc { font-size: 11px; color: rgba(255,255,255,0.18); max-width: 480px; line-height: 1.5; }
+
+  /* ── MOBILE MENU ── */
+  .mobile-menu {
+    display: none; position: fixed;
+    top: var(--nav-h); left: 0; right: 0; z-index: 99;
+    background: var(--white); border-bottom: 1px solid var(--border);
+    padding: 24px 32px; flex-direction: column; gap: 18px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-size: 15px; color: var(--navy); text-decoration: none; padding: 10px 0; border-bottom: 1px solid var(--border); font-weight: 500; }
+
+  /* ── FADE UP ── */
+  .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .nav-mobile-btn { display: block; }
+    section, .why, .about, .contact, .results { padding: 72px 24px; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero::before { display: none; }
+    .hero-left { padding: 60px 24px 40px; }
+    .hero-right { padding: 0 24px 60px; background: var(--navy); }
+    .hero-img { max-width: 100%; }
+    .trust-bar { padding: 20px 24px; gap: 20px; }
+    .practice-grid { grid-template-columns: 1fr; }
+    .why { grid-template-columns: 1fr; }
+    .why-stat-row { grid-template-columns: 1fr 1fr; }
+    .about { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .results-grid { grid-template-columns: 1fr 1fr; }
+    .contact { grid-template-columns: 1fr; }
+    footer { padding: 28px 24px; flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 640px) {
+    .cf-row { grid-template-columns: 1fr; }
+    .why-stat-row { grid-template-columns: 1fr; }
+    .results-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-logo" href="#">
+    <span class="nav-logo-name">James R. Calloway</span>
+    <span class="nav-logo-title">Personal Injury Attorney · Atlanta</span>
+  </a>
+  <div class="nav-links">
+    <a href="#practice">Practice Areas</a>
+    <a href="#about">About</a>
+    <a href="#results">Results</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:4045550192" class="nav-phone">
+      <i data-lucide="phone" style="width:15px;height:15px"></i>
+      (404) 555-0192
+    </a>
+    <a href="#contact" class="nav-cta">Free Consultation</a>
+  </div>
+  <button class="nav-mobile-btn" onclick="toggleMenu()" aria-label="Menu">
+    <i data-lucide="menu" style="width:22px;height:22px;color:var(--navy)"></i>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#practice" onclick="toggleMenu()">Practice Areas</a>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#results" onclick="toggleMenu()">Results</a>
+  <a href="#contact" onclick="toggleMenu()">Free Consultation</a>
+  <a href="tel:4045550192" onclick="toggleMenu()">(404) 555-0192</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" style="padding-top:var(--nav-h)">
+  <div class="hero-left">
+    <p class="hero-eyebrow fade-up">Atlanta Personal Injury Law</p>
+    <h1 class="hero-headline fade-up" style="transition-delay:0.1s">
+      Fighting for the<br>
+      compensation<br>
+      <em>you deserve.</em>
+    </h1>
+    <p class="hero-body fade-up" style="transition-delay:0.2s">When negligence changes your life, you need a fighter in your corner. James R. Calloway has recovered millions for injury victims across Georgia — with zero fees unless you win.</p>
+    <div class="hero-actions fade-up" style="transition-delay:0.3s">
+      <a href="#contact" class="btn-primary">
+        Free Case Review
+        <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+      </a>
+      <a href="tel:4045550192" class="btn-outline">
+        <i data-lucide="phone" style="width:14px;height:14px"></i>
+        Call Now
+      </a>
+    </div>
+    <div class="hero-trust fade-up" style="transition-delay:0.4s">
+      <div class="hero-trust-item">
+        <div class="hero-trust-num">$47M+</div>
+        <div class="hero-trust-label">Recovered for clients</div>
+      </div>
+      <div class="hero-trust-item">
+        <div class="hero-trust-num">18 Yrs</div>
+        <div class="hero-trust-label">Fighting for victims</div>
+      </div>
+      <div class="hero-trust-item">
+        <div class="hero-trust-num">No Fee</div>
+        <div class="hero-trust-label">Unless we win</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img fade-up" style="transition-delay:0.2s">
+      <i data-lucide="user" style="width:36px;height:36px;position:relative;z-index:1"></i>
+      <span class="hero-img-label">Attorney Photo</span>
+      <div class="hero-award">
+        <div class="hero-award-icon">
+          <i data-lucide="award" style="width:20px;height:20px"></i>
+        </div>
+        <div>
+          <div class="hero-award-text">Super Lawyers® 2024</div>
+          <div class="hero-award-sub">Georgia Rising Star · Personal Injury</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <i data-lucide="shield-check" style="width:15px;height:15px"></i>
+    No Fee Unless We Win
+  </div>
+  <div class="trust-item">
+    <i data-lucide="clock" style="width:15px;height:15px"></i>
+    24/7 Availability
+  </div>
+  <div class="trust-item">
+    <i data-lucide="star" style="width:15px;height:15px"></i>
+    10.0 Avvo Rating
+  </div>
+  <div class="trust-item">
+    <i data-lucide="map-pin" style="width:15px;height:15px"></i>
+    Serving All of Georgia
+  </div>
+</div>
+
+<!-- PRACTICE AREAS -->
+<section class="practice" id="practice">
+  <div class="practice-header">
+    <div>
+      <p class="section-label fade-up">What We Handle</p>
+      <h2 class="section-heading fade-up">Practice <em>Areas</em></h2>
+    </div>
+    <p class="section-sub fade-up">Every case is handled personally by James Calloway — not a paralegal or junior associate. You get direct access to your attorney from day one.</p>
+  </div>
+  <div class="practice-grid">
+    <div class="practice-card fade-up">
+      <div class="practice-icon"><i data-lucide="car" style="width:22px;height:22px"></i></div>
+      <h3 class="practice-title">Car Accidents</h3>
+      <p class="practice-desc">Rear-end collisions, intersection crashes, drunk drivers, distracted driving. We handle all auto accident claims and fight for full compensation.</p>
+      <a href="#contact" class="practice-link">Get help <i data-lucide="arrow-right" style="width:13px;height:13px"></i></a>
+    </div>
+    <div class="practice-card fade-up" style="transition-delay:0.1s">
+      <div class="practice-icon"><i data-lucide="truck" style="width:22px;height:22px"></i></div>
+      <h3 class="practice-title">Truck Accidents</h3>
+      <p class="practice-desc">18-wheelers and commercial vehicle crashes involve complex liability. We take on trucking companies and their insurers to recover what you're owed.</p>
+      <a href="#contact" class="practice-link">Get help <i data-lucide="arrow-right" style="width:13px;height:13px"></i></a>
+    </div>
+    <div class="practice-card fade-up" style="transition-delay:0.2s">
+      <div class="practice-icon"><i data-lucide="building" style="width:22px;height:22px"></i></div>
+      <h3 class="practice-title">Premises Liability</h3>
+      <p class="practice-desc">Slip and falls, unsafe conditions, negligent security. Property owners have a duty to keep you safe — when they don't, we hold them accountable.</p>
+      <a href="#contact" class="practice-link">Get help <i data-lucide="arrow-right" style="width:13px;height:13px"></i></a>
+    </div>
+    <div class="practice-card fade-up">
+      <div class="practice-icon"><i data-lucide="hard-hat" style="width:22px;height:22px"></i></div>
+      <h3 class="practice-title">Workers' Compensation</h3>
+      <p class="practice-desc">Injured on the job? We fight to ensure you receive full medical benefits and lost wages — and take action when employers or insurers deny valid claims.</p>
+      <a href="#contact" class="practice-link">Get help <i data-lucide="arrow-right" style="width:13px;height:13px"></i></a>
+    </div>
+    <div class="practice-card fade-up" style="transition-delay:0.1s">
+      <div class="practice-icon"><i data-lucide="activity" style="width:22px;height:22px"></i></div>
+      <h3 class="practice-title">Medical Malpractice</h3>
+      <p class="practice-desc">Surgical errors, misdiagnosis, birth injuries. When medical professionals fail to meet the standard of care, we pursue the compensation you deserve.</p>
+      <a href="#contact" class="practice-link">Get help <i data-lucide="arrow-right" style="width:13px;height:13px"></i></a>
+    </div>
+    <div class="practice-card fade-up" style="transition-delay:0.2s">
+      <div class="practice-icon"><i data-lucide="heart" style="width:22px;height:22px"></i></div>
+      <h3 class="practice-title">Wrongful Death</h3>
+      <p class="practice-desc">Losing a loved one due to someone else's negligence is devastating. We handle wrongful death claims with the sensitivity and tenacity your family deserves.</p>
+      <a href="#contact" class="practice-link">Get help <i data-lucide="arrow-right" style="width:13px;height:13px"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CALLOWAY -->
+<div class="why" id="why">
+  <div>
+    <p class="section-label fade-up">Why Choose Us</p>
+    <h2 class="section-heading fade-up">You deserve an attorney who <em>fights.</em></h2>
+    <p class="section-sub fade-up">Insurance companies have teams of lawyers working to minimize your payout. You need someone equally relentless in your corner.</p>
+    <div class="why-points">
+      <div class="why-point fade-up">
+        <div class="why-point-num">01</div>
+        <div>
+          <div class="why-point-title">Direct attorney access</div>
+          <div class="why-point-desc">You'll work directly with James Calloway — not a paralegal. He answers your calls, attends your hearings, and knows your case inside out.</div>
+        </div>
+      </div>
+      <div class="why-point fade-up" style="transition-delay:0.1s">
+        <div class="why-point-num">02</div>
+        <div>
+          <div class="why-point-title">Contingency fee — zero upfront cost</div>
+          <div class="why-point-desc">You pay nothing unless we win your case. Our fee comes from your settlement, so our success is completely tied to yours.</div>
+        </div>
+      </div>
+      <div class="why-point fade-up" style="transition-delay:0.2s">
+        <div class="why-point-num">03</div>
+        <div>
+          <div class="why-point-title">Proven trial record</div>
+          <div class="why-point-desc">Insurance companies know we go to trial when necessary. That reputation means better settlements — and the willingness to fight when they lowball.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="why-right fade-up" style="transition-delay:0.15s">
+    <div class="why-stat-card">
+      <div class="why-stat-num">$47M+</div>
+      <div class="why-stat-label">Total recovered for Georgia injury victims</div>
+    </div>
+    <div class="why-stat-row">
+      <div class="why-stat-card">
+        <div class="why-stat-num">98%</div>
+        <div class="why-stat-label">Client satisfaction rate</div>
+      </div>
+      <div class="why-stat-card">
+        <div class="why-stat-num">500+</div>
+        <div class="why-stat-label">Cases successfully resolved</div>
+      </div>
+    </div>
+    <div class="why-stat-card">
+      <div class="why-stat-num" style="font-size:28px;color:var(--gold-l)">Free Consultation</div>
+      <div class="why-stat-label" style="margin-top:8px">Speak directly with James Calloway about your case — no obligation, no fee.</div>
+      <a href="#contact" class="btn-primary" style="margin-top:20px;display:inline-flex">
+        Start Here <i data-lucide="arrow-right" style="width:15px;height:15px"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="about" id="about">
+  <div class="fade-up">
+    <div class="about-img">
+      <i data-lucide="user" style="width:32px;height:32px;position:relative;z-index:1"></i>
+      <span class="about-img-label">Attorney Photo</span>
+      <div class="about-gold-corner">
+        <i data-lucide="scale" style="width:28px;height:28px"></i>
+      </div>
+    </div>
+  </div>
+  <div class="fade-up" style="transition-delay:0.15s">
+    <p class="section-label">Your Attorney</p>
+    <h2 class="section-heading">James R.<br><em>Calloway</em></h2>
+    <p class="section-sub" style="margin-bottom:16px">A Georgia native and Emory Law graduate, James Calloway founded his practice with one principle: injury victims deserve the same quality of legal representation as the corporations that hurt them.</p>
+    <p class="section-sub">With 18 years of experience and over $47 million recovered, he has earned a reputation as one of Atlanta's most tenacious personal injury attorneys — and the respect of the insurance companies he faces in negotiations and trial.</p>
+    <div class="about-credentials">
+      <div class="credential">Emory University School of Law, J.D.</div>
+      <div class="credential">State Bar of Georgia — Member since 2006</div>
+      <div class="credential">Super Lawyers® Georgia Rising Star, 2019–2024</div>
+      <div class="credential">Avvo Rating 10.0 — Superb</div>
+      <div class="credential">Multi-Million Dollar Advocates Forum</div>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div class="results" id="results">
+  <p class="section-label fade-up">Case Results</p>
+  <h2 class="section-heading fade-up">Recent <em>Recoveries</em></h2>
+  <div class="results-grid">
+    <div class="result-item fade-up">
+      <div class="result-amount">$4.2M</div>
+      <div class="result-case">Traumatic brain injury from truck collision</div>
+      <div class="result-type">Truck Accident</div>
+    </div>
+    <div class="result-item fade-up" style="transition-delay:0.1s">
+      <div class="result-amount">$2.8M</div>
+      <div class="result-case">Wrongful death — construction site negligence</div>
+      <div class="result-type">Wrongful Death</div>
+    </div>
+    <div class="result-item fade-up" style="transition-delay:0.2s">
+      <div class="result-amount">$1.5M</div>
+      <div class="result-case">Spinal injury — rear-end collision on I-285</div>
+      <div class="result-type">Car Accident</div>
+    </div>
+    <div class="result-item fade-up" style="transition-delay:0.3s">
+      <div class="result-amount">$950K</div>
+      <div class="result-case">Surgical error resulting in permanent disability</div>
+      <div class="result-type">Medical Malpractice</div>
+    </div>
+  </div>
+  <p style="font-size:11px;color:var(--slate);margin-top:16px;font-style:italic">*Past results do not guarantee future outcomes. Every case is unique.</p>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <p class="section-label fade-up">Client Stories</p>
+  <h2 class="section-heading fade-up">What our clients <em>say</em></h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card fade-up">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-quote">"After my accident, the insurance company offered me $15,000. James fought for 14 months and got me $420,000. He never once pressured me to settle early."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">M</div>
+        <div>
+          <div class="author-name">Marcus T.</div>
+          <div class="author-case">Car accident · Fulton County</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card fade-up" style="transition-delay:0.1s">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-quote">"I called 4 attorneys after my slip and fall. James was the only one who called me back personally within the hour. That told me everything I needed to know."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">D</div>
+        <div>
+          <div class="author-name">Denise W.</div>
+          <div class="author-case">Premises liability · DeKalb County</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card fade-up" style="transition-delay:0.2s">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-quote">"We lost our father in a work accident. James handled everything with professionalism and compassion. Our family received justice when we needed it most."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">R</div>
+        <div>
+          <div class="author-name">Robert &amp; Cheryl F.</div>
+          <div class="author-case">Wrongful death · Cobb County</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact" style="padding:100px 80px">
+  <div>
+    <p class="section-label fade-up">Get Started</p>
+    <h2 class="section-heading fade-up">Free case<br><em>consultation</em></h2>
+    <p class="section-sub fade-up">Tell us what happened. James Calloway will personally review your case and give you an honest assessment — free of charge, no obligation.</p>
+    <a href="tel:4045550192" class="contact-detail fade-up">
+      <i data-lucide="phone" style="width:18px;height:18px"></i>
+      (404) 555-0192 — Available 24/7
+    </a>
+    <a href="mailto:james@callowaylaw.com" class="contact-detail fade-up">
+      <i data-lucide="mail" style="width:18px;height:18px"></i>
+      james@callowaylaw.com
+    </a>
+    <div class="contact-detail fade-up">
+      <i data-lucide="map-pin" style="width:18px;height:18px"></i>
+      191 Peachtree St NE, Suite 3350, Atlanta GA 30303
+    </div>
+  </div>
+  <div class="contact-form fade-up" style="transition-delay:0.15s">
+    <div class="cf-row">
+      <div class="cf-group">
+        <label class="cf-label">First Name</label>
+        <input class="cf-input" type="text" placeholder="John">
+      </div>
+      <div class="cf-group">
+        <label class="cf-label">Last Name</label>
+        <input class="cf-input" type="text" placeholder="Smith">
+      </div>
+    </div>
+    <div class="cf-group">
+      <label class="cf-label">Phone Number</label>
+      <input class="cf-input" type="tel" placeholder="(404) 555-0000">
+    </div>
+    <div class="cf-group">
+      <label class="cf-label">Type of Case</label>
+      <select class="cf-select">
+        <option value="" disabled selected>Select case type...</option>
+        <option>Car Accident</option>
+        <option>Truck Accident</option>
+        <option>Premises Liability</option>
+        <option>Workers' Compensation</option>
+        <option>Medical Malpractice</option>
+        <option>Wrongful Death</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="cf-group">
+      <label class="cf-label">Tell us what happened</label>
+      <textarea class="cf-textarea" placeholder="Brief description of your situation..."></textarea>
+    </div>
+    <p class="cf-disclaimer">By submitting this form you agree to be contacted by our office. This does not create an attorney-client relationship. Information shared is confidential.</p>
+    <button class="cf-submit" id="cfSubmit" onclick="handleSubmit(event)">Get My Free Consultation →</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">© 2026 Law Office of James R. Calloway · <a href="#">Privacy Policy</a> · Atlanta, GA</div>
+  <p class="footer-disc">The information on this website is for general informational purposes only and does not constitute legal advice. Past results do not guarantee future outcomes.</p>
+</footer>
+
+<script>
+  lucide.createIcons();
+
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 10));
+
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('cfSubmit');
+    const inputs = document.querySelectorAll('.cf-input, .cf-select, .cf-textarea');
+    const firstName = inputs[0].value.trim();
+    const lastName = inputs[1].value.trim();
+    const phone = inputs[2].value.trim();
+    const caseType = inputs[3].value.trim();
+    const message = inputs[4].value.trim();
+    if (!phone && !firstName) {
+      btn.textContent = 'Please fill in your name and phone number.';
+      setTimeout(() => { btn.textContent = 'Get My Free Consultation →'; }, 3000);
+      return;
+    }
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    try {
+      const res = await fetch('https://formspree.io/f/xpqneeol', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: firstName + ' ' + lastName, phone, caseType, message })
+      });
+      const json = await res.json();
+      if (json.ok) {
+        btn.textContent = 'Submitted — James will be in touch within 24 hours.';
+        btn.style.background = 'var(--navy-3)';
+        btn.style.color = 'var(--white)';
+        inputs.forEach(i => i.value = '');
+        setTimeout(() => {
+          btn.textContent = 'Get My Free Consultation →';
+          btn.style.background = '';
+          btn.style.color = '';
+          btn.disabled = false;
+        }, 5000);
+      } else {
+        btn.textContent = 'Something went wrong — please call us directly.';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Something went wrong — please call us directly.';
+      btn.disabled = false;
+    }
+  }
+</script>
+</body>
+</html>
